@@ -6,9 +6,15 @@ import Image from 'next/image'
 
 function InputBox() {
     const [session] = useSession();
+
+
+const sendPost = e => {
+e.preventDefault();
+};
+
     return (
-        <div>
-            <div>
+        <div className='bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6'>
+            <div className='flex space-x-4 p-4 items-center'>
                 <Image
                 className='rounded-full'
                 src={session.user.image}
@@ -17,7 +23,13 @@ function InputBox() {
                 layout='fixed'
                 />
                 <form className='flex flex-1'>
-                    <input type='text' placeholder={`Whats poppin ${session.user.name}`}></input>
+                    <input 
+                    type='text'
+                     placeholder={`Whats poppin ${session.user.name}`}
+                     className='rounded-full h-12 bg-gray-50 flex-grow px-5 focus:outline-none'
+                     >
+                     </input>
+                     <button  type='submit' hidden onClick={sendPost}>Submit</button>
 
                 </form>
             </div>
