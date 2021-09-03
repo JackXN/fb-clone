@@ -16,6 +16,10 @@ function InputBox() {
                 height={40}
                 layout='fixed'
                 />
+                <form className='flex flex-1'>
+                    <input type='text' placeholder={`Whats poppin ${session.user.name}`}></input>
+
+                </form>
             </div>
         </div>
     )
