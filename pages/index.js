@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='App'>
       <Head>
-        <title>Forum App</title>
+        <title>TechThread</title>
       </Head>
       {/* Header */}
 <Header/>
