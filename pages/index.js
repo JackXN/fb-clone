@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Header from '../components/Header';
 import Login from '../components/Login';
 import Sidebar from '../components/Sidebar';
-
+import Feed from '../components/Feed';
 export default function Home({ session} ) {
   if(!session) return <Login/>
   return (
-    <div className='App'>
+    <div className='h-screen bg-gray-100 overflow-hidden'>
       <Head>
         <title>TechThread</title>
       </Head>
@@ -18,6 +18,8 @@ export default function Home({ session} ) {
         {/* Sidebar */}
         <Sidebar/>
         {/* Feed */}
+        <Feed/>
+
         {/* Widgets */}
       </main>
     </div>
