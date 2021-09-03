@@ -7,7 +7,6 @@ export default function Home() {
       <Head>
         <title>Forum App</title>
       </Head>
-      <h1>Lets build a forum app</h1>
       {/* Header */}
 <Header/>
 
