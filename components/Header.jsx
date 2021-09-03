@@ -48,13 +48,17 @@ function Header() {
 </div>
 
             {/* Right  Section*/}
-        <div>
+        <div className='flex items-center sm:space-x-2 justify-end'>
+
             {/* Profile  */}
             <p className='whitespace-nowrap font-semibold pr-3'>Jack Rigan</p>
-        </div>
+            <ViewGridIcon className='icon'/>
+            <ChatIcon className='icon'/>
+            <BellIcon className='icon'/>
+            <ChevronDownIcon className='icon'/>
 
-
         </div>
+        </div> //! Header container div end
     )
 }
 
