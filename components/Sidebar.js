@@ -1,8 +1,10 @@
 import React from 'react'
+import SidebarRow from './SideBarRow';
+
 import {
     BellIcon,
     ChatIcon,
-    ChevronDownIcon,
+    ChevronDownIcon, 
     HomeIcon,
     UserGroupIcon,
     ViewGridIcon,
@@ -13,14 +15,15 @@ import {
     PlayIcon,
     SearchIcon,
     ShoppingCartIcon,
+    ShoppingBagIcon,
 } from '@heroicons/react/outline';
-import { session } from 'next-auth/client';
+import { session, loading } from 'next-auth/client';
 
 
 function Sidebar({Icon}) {
     return (
         <div className='p-2 mt-5 max-w[600px] xl:min-w-[300px]'>
-            <SideBarRow src={session.user.image} title={session.user.name}/>
+            {/* <SidebarRow src={session.user.image} title={session.user.name}/> */}
             <SidebarRow Icon={UsersIcon} title='friends'/>
             <SidebarRow Icon={UserGroupIcon} title='Groups'/>
             <SidebarRow Icon={ShoppingBagIcon} title='MarketPlace'/>
