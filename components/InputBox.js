@@ -3,6 +3,7 @@
 import { session, useSession } from 'next-auth/client'
 import React from 'react'
 import Image from 'next/image'
+import { VideoCameraIcon, EmojiHappyIcon, CameraIcon } from '@heroicons/react/solid';
 
 function InputBox() {
     const [session] = useSession();
@@ -10,6 +11,7 @@ function InputBox() {
 
 const sendPost = e => {
 e.preventDefault();
+console.log(e.target.value)
 };
 
     return (
@@ -30,8 +32,27 @@ e.preventDefault();
                      >
                      </input>
                      <button  type='submit' hidden onClick={sendPost}>Submit</button>
-
                 </form>
+            </div>
+
+            <div>
+
+                <div>
+                    <VideoCameraIcon className='h-7 text-red-500'/>
+                    <p className='text-xs sm:text-sm xl:text-base'>Live Video</p>
+                </div>
+
+                    <div>
+                        <EmojiHappyIcon className='h-7 text-yellow-300'/>
+                        <p className='text-xs sm:text-sm xl:text-base'>Live Video</p>
+                    </div>
+
+                    <div>
+                        <CameraIcon className='h-7 text-yellow-300'/>
+                        <p className='text-xs sm:text-sm xl:text-base'>Photo/Video</p>
+                        </div>                    
+
+
             </div>
         </div>
     )
