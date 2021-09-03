@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import Image from 'next/image'
+import HeaderIcon from './HeaderIcon';
 import {
     BellIcon,
     ChatIcon,
@@ -39,7 +40,7 @@ function Header() {
             
 <div className='flex justify-center flex-grow'>  {/* Flex grow lets the container grow if there is extra space available */}
     <div>
-
+<HeaderIcon Icon={HomeIcon} />
     </div>
 </div>
 
