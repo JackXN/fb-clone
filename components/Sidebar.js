@@ -1,6 +1,6 @@
 import React from 'react'
 import SidebarRow from './SideBarRow';
-
+import image from 'next/image';
 import {
     BellIcon,
     ChatIcon,
@@ -20,10 +20,11 @@ import {
 import { session, loading } from 'next-auth/client';
 
 
-function Sidebar({Icon}) {
+function Sidebar({Icon,}) {
     return (
         <div className='p-2 mt-5 max-w[600px] xl:min-w-[300px]'>
-            {/* <SidebarRow src={session.user.image} title={session.user.name}/> */}
+    
+            {/* <SidebarRow src={} title={session.name}/> */}
             <SidebarRow Icon={UsersIcon} title='friends'/>
             <SidebarRow Icon={UserGroupIcon} title='Groups'/>
             <SidebarRow Icon={ShoppingBagIcon} title='MarketPlace'/>
