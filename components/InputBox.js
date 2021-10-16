@@ -1,18 +1,54 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-no-undef */
-import { session, useSession } from 'next-auth/client'
-import React from 'react'
+import {useSession } from 'next-auth/client'
 import Image from 'next/image'
 import { VideoCameraIcon, EmojiHappyIcon, CameraIcon } from '@heroicons/react/solid';
+import React, {useState} from 'react';
+import { useRef } from 'react';
+
+
+
+
 
 function InputBox() {
     const [session] = useSession();
+    const inputRef = useRef(null);
+const [input, setInput] = useState('');
 
 
-const sendPost = e => {
-e.preventDefault();
-console.log(e.target.value)
-};
+const sendPost = (e) => {
+    e.preventDefault();
+
+    if(!inputRef.target.value) return;
+
+    db.collection('posts').add ({
+        message: inputRef.current.value
+    })
+
+}
+
+
+// const handleChange = (e) => {
+//     e.preventDefault();
+//     setInput(e.target.value)
+//     // console.log(e.target.value)
+// }
+
+// const handleSubmit = (e) => {
+//     e.preventDefault();
+// setInput([
+//     ...input,
+//     {message: input, name: session.user.name, email: session.user.email, image: session.user.image}
+// ]);
+
+// }
+
+
+
+// if(!inputRef.current.value) return;
+
+
+
 
     return (
         <div className='bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6'>
@@ -29,9 +65,8 @@ console.log(e.target.value)
                     type='text'
                      placeholder={`Whats poppin ${session.user.name}`}
                      className='rounded-full h-12 bg-gray-50 flex-grow px-5 focus:outline-none'
-                     >
-                     </input>
-                     <button  type='submit' hidden onClick={sendPost}>Submit</button>
+                    onClick={sendPost}
+                     />
                 </form>
             </div>
 
@@ -56,6 +91,7 @@ console.log(e.target.value)
 
                         </div>
             </div>
+
         </div>
     )
 }
